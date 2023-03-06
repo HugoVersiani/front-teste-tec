@@ -1,7 +1,9 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue';
-import Select from './components/Select.vue'
+import Select from './components/Select.vue';
+import Car from './components/Car.vue'
+import Simulation from './components/Simulation.vue'
 </script>
 
 <template>
@@ -9,19 +11,31 @@ import Select from './components/Select.vue'
   <div class="main">
     <h3>Simulação de Financiamento</h3>
     <Select/>
-    <HelloWorld msg="Vite + Vue" />
+    <div class="sect">
+      <Car/>
+      <Simulation/>
+    </div>
   </div>
   
 </template>
 
 <style scoped>
 h3 {
-  margin: 70px 0 20px 0;
-  font-size: 2em;
+  margin: 20px 0 20px 0;
+  font-size: 1.5em;
+  font-weight: 400;
   position: relative;  
 }
 
-h3:after {
+
+@media (min-width: 700px) {
+  h3 {
+    margin: 70px 0 20px 0;
+    font-size: 2em;
+    position: relative; 
+  }
+
+  h3:after {
   display: block;
   content: '';
   width: 5%;
@@ -30,6 +44,11 @@ h3:after {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+  .sect {
+    display: flex;
+    margin-top: 30px;
+  }
 }
 
 

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div id="select"> 
+    <section class="shadow" id="select"> 
         <h5>Selecione um veículo e insira o seu valor de entrada:</h5>
         <div id="main">
             <select>
@@ -18,7 +18,7 @@
                 Simular
             </button>
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>
