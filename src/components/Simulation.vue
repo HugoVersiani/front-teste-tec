@@ -183,3 +183,13 @@ ion-icon {
 }
 
 </style>
+
+<script>
+export default {
+    name: 'Simulation',
+    props: {
+        id: Number
+    }
+    
+}
+</script>

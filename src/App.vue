@@ -11,10 +11,10 @@ import api from './services/api.js'
   <Header/>
   <div class="main">
     <h3>Simulação de Financiamento</h3>
-    <Select/>
-    <div class="sect">
-      <Car/>
-      <Simulation/>
+    <Select @submit="(data) =>{$store.state.car = data}" />
+    <div v-show="$store.state.simulation" class="sect">
+      <Car :car="$store.state.car"/>
+      <Simulation :car="$store.state.car"/>
     </div>
   </div>
   
@@ -60,23 +60,34 @@ h3 {
 import '../src/styles/globals.css';
 export default {
   name: 'App',
+  data() {
+    return {
+      
+      car: 1
+    }
+  },
+
   created(){
-    
+
     api.get('vehicle').then(response=>{
       const newCar = []
       response.data.map(function(value, key) {
         newCar.push(value);
       });
       this.$store.commit('storeCar', newCar)
-    
+      
     })
-  
-  
+
   },
   
   mounted(){
-        
 
+
+    },
+    methods: {
+      submit(){
+          alert(car)
+      }
     }
 }
 </script>

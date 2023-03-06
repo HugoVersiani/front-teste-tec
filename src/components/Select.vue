@@ -1,18 +1,19 @@
 <script setup>
 </script>
 
-<template>
+<template  >
     <section class="shadow" id="select"> 
         <h5>Selecione um veículo e insira o seu valor de entrada:</h5>
         <div id="main">
-            <select>
-                <option v-for="car in $store.state.cars" value="" selected>{{car.model}}</option>
+            <select v-model="car">
+                <option  v-bind:value="car"  v-for="car in $store.state.cars" >{{car.model}}</option>
             </select>
             <input type="number" placeholder="Entrada" maxlength="8" size="10">
           
-            <button>
+            <button @click="$emit('submit', car)">
                 Simular
             </button>
+        
         </div>
     </section>
 </template>
@@ -127,9 +128,17 @@ button {
 
 export default {
     name: 'Select',
+    data() {
+      return {
+        car: ''
+      } 
+    },
     created(){
         
         
+    },
+    methods: {
+      
     }
     
 }

@@ -1,18 +1,21 @@
+<script setup>
+</script>
 <template>
         <section class="card_data shadow" >
             <div class="img">
                 <img src="../assets/carro1.png" alt="fotografia do carro selecionado">
                 <span>
-                    <ion-icon name="pin"></ion-icon>Belo Horizonte
+                    <ion-icon name="pin"></ion-icon>{{ city }}
                 </span>
             </div>
             <div class="data">
-                <h5>Volkswagen T-cross</h5>
-                <p>1.0 200 TSI Total Flex Comfortline</p>
+               
+                <h5>{{ model }} </h5>
+                <p>{{ description }}</p>
                 <div>
-                    <span><ion-icon name="calendar-outline"></ion-icon>2020</span>
-                    <span><ion-icon name="speedometer"></ion-icon>15.858 Km</span>
-                    <span><ion-icon name="caret-up-circle"></ion-icon>Automatico</span>
+                    <span><ion-icon name="calendar-outline"></ion-icon>{{ year }}</span>
+                    <span><ion-icon name="speedometer"></ion-icon>{{ km }} Km</span>
+                    <span><ion-icon name="caret-up-circle"></ion-icon>{{ transmission }}</span>
                 </div>
                 <span class="price">R$ 59.500</span>
             </div>
@@ -104,3 +107,46 @@
     
 
 </style>
+<script>
+export default {
+    name: 'Car',
+    props: {
+        car: Array
+    },
+    data() {
+       return {
+        model: '',
+        description: '',
+        city: '',
+        make: '',
+        year: '',
+        phone: '',
+        price: '',
+        transmission: '',
+        image: '',
+        km: '',
+       }
+       
+    },
+    methods() {
+        
+    },
+    watch: { 
+      	car(car) {
+           
+            this.model = car.model
+            this.description = car.description
+            this.city = car.city
+            this.make = car.make
+            this.year = car.year
+            this.phone = car.phone
+            this.price = car.price
+            this.transmission = car.transmission
+            this.km = car.km
+            
+         
+        }
+      }
+
+}
+</script>
