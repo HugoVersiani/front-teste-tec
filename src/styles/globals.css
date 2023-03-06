@@ -1,0 +1,31 @@
+:root {
+    --color-primary: #7D28F7; 
+    --color-background: #EBEEF2;
+    --color-secondary: #fafafa;
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+}
+
+html,
+body {
+    background-color: var(--color-background);
+
+}
+
+a {
+    text-decoration: none;
+    transition: 0.2s opacity;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+.main {
+    padding: 0 5%;
+}
