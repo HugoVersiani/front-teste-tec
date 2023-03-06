@@ -4,6 +4,7 @@ import Header from './components/Header.vue';
 import Select from './components/Select.vue';
 import Car from './components/Car.vue'
 import Simulation from './components/Simulation.vue'
+import api from './services/api.js'
 </script>
 
 <template>
@@ -60,7 +61,22 @@ import '../src/styles/globals.css';
 export default {
   name: 'App',
   created(){
-    console.log(this.$store)
-  }
+    
+    api.get('vehicle').then(response=>{
+      const newCar = []
+      response.data.map(function(value, key) {
+        newCar.push(value);
+      });
+      this.$store.commit('storeCar', newCar)
+    
+    })
+  
+  
+  },
+  
+  mounted(){
+        
+
+    }
 }
 </script>

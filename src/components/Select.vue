@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -7,13 +6,10 @@
         <h5>Selecione um veículo e insira o seu valor de entrada:</h5>
         <div id="main">
             <select>
-                <option value="" selected>Selecione</option>
-                <option value="valor1">Valor 1</option>
-                <option value="valor2">Valor 2</option>
-                <option value="valor3">Valor 3</option>
+                <option v-for="car in $store.state.cars" value="" selected>{{car.model}}</option>
             </select>
             <input type="number" placeholder="Entrada" maxlength="8" size="10">
-            
+          
             <button>
                 Simular
             </button>
@@ -127,3 +123,14 @@ button {
 
 
 </style>
+<script>
+
+export default {
+    name: 'Select',
+    created(){
+        
+        
+    }
+    
+}
+</script>
