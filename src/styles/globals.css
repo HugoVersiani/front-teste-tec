@@ -48,3 +48,22 @@ a:hover {
         margin: 0 auto;
      }
 }
+
+.skeleton {
+	width: 100%;
+	height: 16px;
+	display: block;
+	animation: pulse-bg 2s infinite;
+}
+
+@keyframes pulse-bg {
+	30% {
+		background-color: #d8d8d8;
+	}
+	60% {
+		background-color: #eaeaea;
+	}
+	90% {
+		background-color: #eee;
+	}
+}

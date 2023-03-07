@@ -5,7 +5,7 @@
             <div class="img">
                 <img src="../assets/carro1.png" alt="fotografia do carro selecionado">
                 <span>
-                    <ion-icon name="pin"></ion-icon>{{ city }}
+                 {{ city }}
                 </span>
             </div>
             <div class="data">
@@ -13,11 +13,11 @@
                 <h5>{{ model }} </h5>
                 <p>{{ description }}</p>
                 <div>
-                    <span><ion-icon name="calendar-outline"></ion-icon>{{ year }}</span>
-                    <span><ion-icon name="speedometer"></ion-icon>{{ km }} Km</span>
-                    <span><ion-icon name="caret-up-circle"></ion-icon>{{ transmission }}</span>
+                    <span>{{ year }}</span>
+                    <span>{{ km }} Km</span>
+                    <span>{{ transmission }}</span>
                 </div>
-                <span class="price">R$ 59.500</span>
+                <span class="price">R$ {{ price }}</span>
             </div>
         </section>
 </template>
@@ -45,9 +45,7 @@
         padding: 5px 10px 5px 0;
         
     }
-    .img>span>ion-icon {
-        color: var(--color-primary)
-    }
+
 
     img {
         width: 100%;
@@ -73,11 +71,7 @@
         align-items: center;
     }
 
-    .data>div>span>ion-icon {
-        font-size: .9em;
-        padding-right: 5px;
-        color: rgba(68, 68, 68, 0.7);
-    }
+
 
     .data>div>span {
         font-size: .9em;
@@ -111,7 +105,7 @@
 export default {
     name: 'Car',
     props: {
-        car: Array
+        car: Object
     },
     data() {
        return {

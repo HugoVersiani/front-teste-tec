@@ -1,5 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue';
 import Select from './components/Select.vue';
 import Car from './components/Car.vue'
@@ -11,10 +10,10 @@ import api from './services/api.js'
   <Header/>
   <div class="main">
     <h3>Simulação de Financiamento</h3>
-    <Select @submit="(data) =>{$store.state.car = data}" />
-    <div v-show="$store.state.simulation" class="sect">
+    <Select @submit="(data) =>send(data)" />
+    <div v-show="$store.state.car" class="sect">
       <Car :car="$store.state.car"/>
-      <Simulation :car="$store.state.car"/>
+      <Simulation :six="six" :twelve="twelve" :fortyeight="fortyeight" :car="$store.state.car"/>
     </div>
   </div>
   
@@ -62,8 +61,11 @@ export default {
   name: 'App',
   data() {
     return {
-      
-      car: 1
+      car: 1,
+      simulate: [],
+      six: '',
+      twelve: '',
+      fortyeight: ''
     }
   },
 
@@ -85,9 +87,27 @@ export default {
 
     },
     methods: {
-      submit(){
-          alert(car)
+      send(data){
+        this.$store.state.car = data
+        this.simulate['vehicle_id'] = data.id
+        this.simulate['down_payment'] = data.down_payment
+        
+        api.post('/simulate',{vehicle_id: this.simulate['vehicle_id'], down_payment: this.simulate['down_payment']})
+        .then((response) =>{
+          if(response.status ==200) {
+            this.six = response.data.installments['6'].installment_price
+            this.twelve = response.data.installments['12'].installment_price
+            this.fortyeight = response.data.installments['48'].installment_price
+           }
+         
+        
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
       }
     }
 }
+
 </script>

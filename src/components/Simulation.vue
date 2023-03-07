@@ -7,24 +7,27 @@
         <h5>Valores simulados para você</h5>
         <div class="main-div">
             <div class="set installment shadow">
-                <span class="installments">6x</span>
-                <span class="price">R$ 9.917</span>
+                <span v-if="!six" class="skeleton installments config"></span>
+                <span v-if="six" class="installments">6x</span>
+                <span v-if="six" class="price">R$ {{six}}</span>
             </div>
             <div class="set">
                 <div class="installm installment shadow">
-                    <span class="installments">6x</span>
-                    <span class="price">R$ 9.917</span>
+                    <span v-if="!twelve" class="skeleton installments config"></span>
+                    <span v-if="twelve" class="installments">12x</span>
+                    <span v-if="twelve" class="price">R$ {{twelve}}</span>
                 </div>
                 <div class="installm installment shadow">
-                    <span class="installments">6x</span>
-                    <span class="price">R$ 9.917</span>
+                    <span v-if="!fortyeight" class="skeleton installments config"></span>
+                    <span v-if="fortyeight" class="installments">48x</span>
+                    <span v-if="fortyeight"  class="price">R$  {{fortyeight}}</span>
                 </div>
             </div>
          
         </div>
         <div class="call">
             <button>
-                <ion-icon name="logo-whatsapp"></ion-icon>Falar com consultor
+              Falar com consultor
             </button>
             <span>
                 (31) 3441-0240
@@ -65,6 +68,9 @@
     display: flex;
     flex-direction: column;
 }
+.config {
+    min-height: 70px;
+}
 
 .set {
     width: 100%;
@@ -93,10 +99,7 @@ button {
     margin-top: 5px;
 }
 
-ion-icon {
-    color: #ffffff;
-    padding-right: 5px;
-}
+
 h5 {
     display: none;
 }
@@ -175,10 +178,7 @@ h5:after {
     margin: 0 10px;
 }
 
-ion-icon {
-    font-size: 0.9em;
-}
-    
+
 
 }
 
@@ -188,7 +188,10 @@ ion-icon {
 export default {
     name: 'Simulation',
     props: {
-        id: Number
+        id: Number,
+        six: String,
+        twelve: String,
+        fortyeight: String
     }
     
 }

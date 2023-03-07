@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore( {
     state: {
       simulation: false,
-      car: [],
+      car: false,
       cars: []
     },
     mutations: {

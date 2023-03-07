@@ -3,12 +3,14 @@
 
 <template  >
     <section class="shadow" id="select"> 
+        
         <h5>Selecione um veículo e insira o seu valor de entrada:</h5>
         <div id="main">
             <select v-model="car">
+              
                 <option  v-bind:value="car"  v-for="car in $store.state.cars" >{{car.model}}</option>
             </select>
-            <input type="number" placeholder="Entrada" maxlength="8" size="10">
+            <input v-model="car['down_payment']" type="number" placeholder="Entrada" maxlength="8" size="10">
           
             <button @click="$emit('submit', car)">
                 Simular
@@ -130,7 +132,8 @@ export default {
     name: 'Select',
     data() {
       return {
-        car: ''
+        car: '',
+        down_payment: ''
       } 
     },
     created(){
