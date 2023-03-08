@@ -73,6 +73,9 @@
         padding-top: 10px;
         background-color: var(--color-footer);
         width: 100%;
+        position: absolute;
+        bottom: -1000px;
+        
       
     }
 
@@ -133,7 +136,8 @@
     }
 
     .social li ion-icon {
-         color: var(--color-secondary)
+         color: var(--color-secondary);
+         padding-left: 10px
     }
 
     .mobile h4 {
@@ -156,9 +160,7 @@
         padding: 20px 10%;
         background-color: var(--color-footer);
         position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0;
+        bottom: -100px;
         
     }
 

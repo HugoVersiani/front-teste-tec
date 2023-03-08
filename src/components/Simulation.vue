@@ -64,7 +64,7 @@
 
 .installment {
     width: 100%;
-    margin: 5px;
+    margin: 0 0 10px 0;
     display: flex;
     flex-direction: column;
 }
@@ -149,14 +149,18 @@ h5:after {
     flex-wrap: wrap;
 }
 .installment {
-    margin: 5px;
+    margin: 0 0 10px 0;
     display: flex;
     flex-direction: column;
+}
+.installment:last-child {
+    margin: 0 0 10px 10px;
 }
 
 .set{
     width: 100%;
     display: flex;
+    margin-right: 0;
 }
 .installm {
     width: 50%;

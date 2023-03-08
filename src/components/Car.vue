@@ -3,13 +3,13 @@
 <template>
         <section class="card_data shadow" >
             <div class="img">
-                <img src="../assets/carro1.png" alt="fotografia do carro selecionado">
+                <img v-bind:src="'/public/cars/' + this.image" alt="fotografia do carro selecionado">
                 <span class="center">
                 <ion-icon name="location"></ion-icon>{{ city }}
                 </span>
             </div>
             <div class="data">
-               
+    
                 <h5>{{ model }} </h5>
                 <p>{{ description }}</p>
                 <div>
@@ -66,7 +66,7 @@
     }
 
     .data>p {
-        font-size: 0.9em;
+        font-size: 0.85em;
         padding: 3px 0;
     }
 
@@ -140,6 +140,7 @@ export default {
             this.price = car.price
             this.transmission = car.transmission
             this.km = car.km
+            this.image = car.image_path
             
          
         }

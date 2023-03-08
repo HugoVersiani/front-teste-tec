@@ -1,8 +1,8 @@
 <script setup>
-import Select from './components/Select.vue';
-import Car from './components/Car.vue'
-import Simulation from './components/Simulation.vue'
-import api from './services/api.js'
+import Select from '../components/Select.vue';
+import Car from '../components/Car.vue'
+import Simulation from '../components/Simulation.vue'
+import api from '../services/api.js'
 </script>
 
 
@@ -57,9 +57,14 @@ h3 {
 </style>
 
 <script>
-import '../src/styles/globals.css';
+import '../styles/globals.css';
 export default {
   name: 'App',
+  components: {
+      Select,
+      Car,
+      Simulation
+  },
   data() {
     return {
       car: 1,
