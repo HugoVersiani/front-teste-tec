@@ -3,6 +3,7 @@
     --color-background: #EBEEF2;
     --color-secondary: #fafafa;
     --color-text: #444444;
+    --color-footer: #343A40CC
   }
 
 * {
@@ -18,6 +19,9 @@ body {
     background-color: var(--color-background);
 
 }
+ul, li {
+   list-style: none;
+}
 
 a {
     text-decoration: none;
@@ -31,6 +35,11 @@ a:hover {
 .main {
    width: 90%;
    margin: 0 auto;
+}
+
+ion-icon {
+    padding: 0 10px;
+    font-size: 1.1em;    
 }
 
 .shadow {

@@ -1,18 +1,21 @@
 <script setup>
-import Header from './components/Header.vue';
 import Select from './components/Select.vue';
 import Car from './components/Car.vue'
 import Simulation from './components/Simulation.vue'
-import Footer from './components/Footer.vue'
 import api from './services/api.js'
 </script>
 
-<template>
-  <Header/>
-  <vue-link to="/"></vue-link>
 
-  <Footer />
-  
+<template>
+  <div class="main">
+    <h3>Simulação de Financiamento</h3>
+    
+    <Select @submit="(data) =>send(data)" />
+    <div v-show="$store.state.car" class="sect">
+      <Car :car="$store.state.car"/>
+      <Simulation :six="six" :twelve="twelve" :fortyeight="fortyeight" :car="$store.state.car"/>
+    </div>
+  </div>
 </template>
 
 <style scoped>

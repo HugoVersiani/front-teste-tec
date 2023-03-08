@@ -27,10 +27,10 @@
         </div>
         <div class="call">
             <button>
-              Falar com consultor
+            <ion-icon class="whats" name="logo-whatsapp"></ion-icon> Falar com consultor
             </button>
             <span>
-                (31) 3441-0240
+                <ion-icon name="call-sharp"></ion-icon>(31) 3441-0240
             </span>
           </div>
     </section>
@@ -110,6 +110,10 @@ h5 {
     align-items: center;
 }
 
+.whats {
+    color: var(--color-secondary)
+}
+
 @media (min-width: 700px) {  
     
 .simulations_card {
@@ -187,6 +191,7 @@ h5:after {
 <script>
 export default {
     name: 'Simulation',
+    
     props: {
         id: Number,
         six: String,

@@ -4,8 +4,8 @@
         <section class="card_data shadow" >
             <div class="img">
                 <img src="../assets/carro1.png" alt="fotografia do carro selecionado">
-                <span>
-                 {{ city }}
+                <span class="center">
+                <ion-icon name="location"></ion-icon>{{ city }}
                 </span>
             </div>
             <div class="data">
@@ -13,9 +13,11 @@
                 <h5>{{ model }} </h5>
                 <p>{{ description }}</p>
                 <div>
-                    <span>{{ year }}</span>
-                    <span>{{ km }} Km</span>
-                    <span>{{ transmission }}</span>
+                  
+                   <span><ion-icon name="calendar-outline"></ion-icon>{{ year }}</span>
+                   <span><ion-icon name="speedometer"></ion-icon>{{ km }} Km</span>
+                    <span class="center" v-if="transmission == 0"> <ion-icon name="caret-up-circle"></ion-icon>Manual</span>
+                    <span class="center" v-if="transmission == 1"> <ion-icon name="caret-up-circle"></ion-icon>Automático</span>
                 </div>
                 <span class="price">R$ {{ price }}</span>
             </div>
@@ -44,6 +46,10 @@
         border-radius: 0 50px 50px 0;
         padding: 5px 10px 5px 0;
         
+    }
+    .center {
+        display: flex;
+        align-items: center 
     }
 
 
@@ -94,16 +100,13 @@
 
 
  }
-
-
-
-
     
 
 </style>
 <script>
 export default {
     name: 'Car',
+    
     props: {
         car: Object
     },
