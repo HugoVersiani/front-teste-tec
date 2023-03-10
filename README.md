@@ -1,31 +1,54 @@
-# Vue 3 + Vite
+# Front End - Teste Listra Digital
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended IDE Setup
+<img width="70%" src="../../ecommercenet/front-teste-tec/public/app/home.gif">
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<img  src="../../ecommercenet/front-teste-tec/public/app/home_mobile.gif">
 
-## Project Setup
+<br/><br/>
+<br/>
+<br/>
 
+
+
+# Requisitos para rodar o projeto:
+-Nodejs ;<br/>
+-Npm;<br/>
+-Back end rodando com o docker.<br/>
+
+## Passo a passo:
+
+Clone Repositório
+```sh
+git clone https://github.com/HugoVersiani/front-teste-tec.git front-teste-tec
+```
+```sh
+cd front-teste-tec
+
+```
+
+Instale o projeto e as dependencias:
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Rode o projeto
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+## Sobre o Frond End:
+### Existem 3 caminhos na aplicação:
 
-### Lint with [ESLint](https://eslint.org/)
+-Simulador: '/'<br/>
+-Login: '/login'<br/>
+-Cadastro de veículos '/dashboard'.<br/>
 
-```sh
-npm run lint
-```
+<br/>
+
+email: admin@email.com<br/>
+senha: password
+
+
