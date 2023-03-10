@@ -1,9 +1,9 @@
 # Front End - Teste Listra Digital
 
 
-<img width="70%" src="../../ecommercenet/front-teste-tec/public/app/home.gif">
+<img width="70%" src="/public/app/home.gif">
 
-<img  src="../../ecommercenet/front-teste-tec/public/app/home_mobile.gif">
+<img  src="/public/app/home_mobile.gif">
 
 <br/><br/>
 <br/>
