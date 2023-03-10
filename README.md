@@ -14,7 +14,7 @@
 # Requisitos para rodar o projeto:
 -Nodejs ;<br/>
 -Npm;<br/>
--Back end rodando com o docker.<br/>
+-Back end rodando com o docker. (https://github.com/HugoVersiani/back-teste-tec)<br/>
 
 ## Passo a passo:
 
