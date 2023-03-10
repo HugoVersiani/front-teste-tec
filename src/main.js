@@ -5,6 +5,8 @@ import store from './store'
 import Aplication from './views/Aplication.vue'
 import Login from './views/Login.vue'
 import Dashboard from './views/Dashboard.vue'
+import Guard from '../src/services/middleware'
+
 const routes = [
     {
         path: '/',
@@ -16,7 +18,8 @@ const routes = [
     },
     {
         path: '/dashboard',
-        component: Dashboard
+        component: Dashboard,
+        beforeEnter: Guard.auth,
     },
 
 ];

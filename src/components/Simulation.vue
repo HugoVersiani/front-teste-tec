@@ -29,7 +29,7 @@
             <button>
             <ion-icon class="whats" name="logo-whatsapp"></ion-icon> Falar com consultor
             </button>
-            <span>
+            <span >
                 <ion-icon name="call-sharp"></ion-icon>(31) 3441-0240
             </span>
           </div>
@@ -114,6 +114,10 @@ h5 {
     color: var(--color-secondary)
 }
 
+.call>span {
+    padding-top: 10px;
+}
+
 @media (min-width: 700px) {  
     
 .simulations_card {
@@ -175,7 +179,7 @@ h5:after {
     width: 80%;
 }
 .call>span {
-    font-size: 0.9em
+    font-size: 0.9em;
 }
 
 .call>button {

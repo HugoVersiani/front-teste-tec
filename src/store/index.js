@@ -2,9 +2,10 @@ import { createStore } from 'vuex'
 
 export default createStore( {
     state: {
-      simulation: false,
-      car: false,
-      cars: []
+        token: false,
+        simulation: false,
+        car: false,
+        cars: []
     },
     mutations: {
         storeCar(state, data) {
@@ -12,6 +13,9 @@ export default createStore( {
         },
         showSimulation(state, data) {
             state.simulation = data
+        },
+        setToken(state, data) {
+            state.token = data
         }
     }
 }

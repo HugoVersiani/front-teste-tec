@@ -1,10 +1,10 @@
 <script setup>
     import api from '../services/api.js'
+    import Toast from '../components/Toast.vue'
 </script>
 <template>
   <div class="main-div shadow">
-   <div v-if="showToastG" class="toastGreen"> Veículo cadastrado com sucesso!</div>
-    <div v-if="showToastR" class="toastRed"> Veículo não cadastrado.</div>
+    <Toast :color="toast.color" :msg="toast.msg" v-if="toast.show"/>   
     <h2>Cadastro de veículos</h2>
         <form class="main-form" @submit.prevent="submitForm">
             <div class="col">
@@ -143,8 +143,6 @@ button {
     margin-top: 15px
 } 
 
-
-
 .main-form {
 
     display: flex;
@@ -164,10 +162,9 @@ button {
 
 <script>
 export default {
+   components: { Toast },
   data() {
     return {
-        showToastG: false,
-        showToastR: false,
       car: {
         city: '',
         make: '',
@@ -179,27 +176,49 @@ export default {
         phone: '',
         price: 0,
         image: 'default.png'
+      },
+       toast: {
+        show: false,
+        color: '',
+        msg: ''
       }
     };
   },
   methods: {
-    //handleFileUpload(event) {
-     // this.car.image = event.target.files[0];
-    //},
+
+    callToast(color, msg) {
+        
+      this.toast.show = true;
+      this.toast.color = color;
+      this.toast.msg = msg
+
+    },
     submitForm() {
         
        
-       api.post('/vehicle',{city: this.car.city, make: this.car.make, model: this.car.model, year: this.car.year, km: this.car.km, description: this.car.description, transmission: this.car.transmission, phone: this.car.phone, price: this.car.price, image_path: this.car.image})
+       api.post('/vehicle',{
+                            city: this.car.city,
+                            make: this.car.make,
+                            model: this.car.model,
+                            year: this.car.year,
+                            km: this.car.km,
+                            description: this.car.description,
+                            transmission: this.car.transmission,
+                            phone: this.car.phone,
+                            price: this.car.price,
+                            image_path: this.car.image},
+                            {
+                            headers: {
+                                'Authorization': 'Bearer' +   localStorage.getItem('token')
+                                }
+                            })
         .then((response) =>{
-            if(response.status ==200) {
-                this.showToastG = true
-            } else {
-                this.showToastR = true
-            }
+            this.callToast('success', 'Veículo cadastrado com sucesso!');
         })
-        .catch(function (error) {
-          
-          console.log(error);
+        .catch((error) => {
+           
+          console.error(error);
+          this.callToast('danger', 'Não foi possivel cadastrar o veículo.');
         });
     }
   }
