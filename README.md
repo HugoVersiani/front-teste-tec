@@ -1,7 +1,7 @@
 # Front End - Teste Listra Digital
 
 
-<img width="70%" src="./public/app/home.gif">
+<img  src="./public/app/home.gif">
 
 <img  src="./public/app/home_mobile.gif">
 
